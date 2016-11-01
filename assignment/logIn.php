@@ -10,7 +10,8 @@ include ("database.php");
         $password = sha1($_POST["password"]);
         
         //looking through the database for info.            
-        $stmt = $conn->prepare("SELECT * FROM users WHERE username = :user AND password = :pass");
+        $stmt = $conn->prepare("SELECT * FROM users WHERE 
+        username = :user AND password = :pass");
         $stmt->bindParam(":user", $username);
         $stmt->bindParam(":pass", $password);
         $stmt->execute();
