@@ -4,7 +4,7 @@ session_start();
 include ("validate.php");
 
 include ("database.php");
-   
+   //isset = makes sure there is something within the textfield. cant be blank
     if(isset($_POST['login'])){
         
         $username = $_POST["username"];
