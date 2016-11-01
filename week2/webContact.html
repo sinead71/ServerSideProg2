@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>        
+    </head>
+    <body>
+        <h1>Create your profile</h1>
+        <br>
+        <form name="webContact" method="POST" action="validate.php">
+            <input type="text" name="username" placeholder="Your Name"><br>
+            <input type="number" name="number" placeholder="Phone Number"><br>
+            <input type="email" name="email" placeholder="Email"><br>
+            <input type="number" name="age" placeholder="Age" min="01" max="100" ><br>
+            <br>
+            <input type="radio" name="gender" value="male">Male<br>
+            <input type="radio" name="gender" value="female">Female<br>
+            <br>
+            <textarea name="comment" rows="4" cols="50" maxlength="250" placeholder="Enter comment here"></textarea><br>
+            <br>
+            <button name="submit" type="submit">Submit</button> 
+        </form>
+     
+     
+    <script src="jQuery.js" ></script>    
+    </body>
+</html>
