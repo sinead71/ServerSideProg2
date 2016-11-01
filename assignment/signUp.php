@@ -1,12 +1,13 @@
 <?php 
 session_start();
 include ("database.php");
+include ("validate.php");
 
 if(isset($_POST['signUp'])){
         
         $username = $_POST["username"];
         $password = sha1($_POST["password"]);
-        $email = $_POST["email"]);
+        $email = $_POST["email"];
         //need to add email to the user table in mysql
 
         $stmt = $conn->prepare("INSERT INTO users (username, user_id, password, email)
@@ -17,7 +18,7 @@ if(isset($_POST['signUp'])){
         $stmt->execute();
         
 
-
+}
 
 
 ?>

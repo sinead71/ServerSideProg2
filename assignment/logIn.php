@@ -1,6 +1,7 @@
 <?php  
 //has to start at the beginning
 session_start();
+include ("validate.php");
 
 include ("database.php");
    
