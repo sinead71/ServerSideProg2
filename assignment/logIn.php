@@ -7,8 +7,8 @@ include ("database.php");
    //isset = makes sure there is something within the textfield. cant be blank
     if(isset($_POST['login'])){
         
-        $username = $_POST["username"];
-        $password = sha1($_POST["password"]);
+        $username = check_input($_POST["username"]);
+        $password = check_input(sha1($_POST["password"]));
         
         //looking through the database for info.            
         $stmt = $conn->prepare("SELECT * FROM users WHERE 
