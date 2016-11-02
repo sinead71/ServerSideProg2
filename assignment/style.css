@@ -72,19 +72,57 @@ input {
 }
 
 #pagetitle{
+    margin-left: 41%;
     float:left;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 45px;   
+    font-size: 65px; 
+    margin-bottom: 5px;  
 }
 
 #cartBtn{
     padding:10px;
-    width:10%;
+    width:290px;
     background-color:#d19ea4;
-    margin-top:15px;
+    margin-left:40.8%;
     border:0;
     border-radius:18px;
     font-family: Arial, Helvetica, sans-serif;
     font-size:16px;
+    /*float:left;*/
+}
+
+.products{
+    margin-top:40px;
+    width:30%;
+    height: 300px;
+    border-right-style:  inset;
+    border-bottom-style: inset;
+    border-color: black;
+    margin-left: 5%;
+}
+
+h2{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 35px; 
+}
+
+img{
     float:left;
+    margin-left: 7%;
+    max-width: 85%;
+    max-height: 95%;
+}
+
+#addBtn{
+    float:left;
+    margin-left: 40%;
+    margin-top: 15px;
+    padding:10px;
+    width:120px;
+    border:0;
+    background-color:#d19ea4;
+    border-radius:18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:14px;
 }
