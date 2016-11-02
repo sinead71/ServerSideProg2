@@ -18,8 +18,7 @@ include ("database.php");
         $stmt->execute();
         
         if($stmt->rowCount() == 1){
-            echo "found user";
-            echo"<br>";
+            header("Location:products.php");          
         }else{
             echo("user not found");
         }
