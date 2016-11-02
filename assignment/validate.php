@@ -5,14 +5,9 @@
     
     
     if($_SERVER["REQUEST_METHOD"]=="POST"){
-        $username = check_input($_POST["username"]);
-        $number = check_input($_POST["number"]);
-        $number = only_numbers($_POST["number"]);
+        $username = check_input($_POST["username"]); 
+        $password = check_input($_POST["password"]);     
         $email = check_input($_POST["email"]);
-        $age = check_input($_POST["age"]);
-        $age = only_numbers($_POST["age"]);
-        $gender = check_input($_POST["gender"]);
-        $comment = check_input($_POST["comment"]);
     }    
     
     function check_input($data){
@@ -24,12 +19,7 @@
         return $data;
     }
     
-    function only_numbers($data){
-        if (is_numeric($data)){
-            return $data;
-        }
-        else {return "not a number";} 
-    }
+
     
     
 
