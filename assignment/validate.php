@@ -14,8 +14,9 @@
     //wrap this aound the email to secure it
     function check_email($data){
         if(isset($data)){
-            $sanitized = filter_var($email, FILTER_SANITIZE_EMAIL);
+            $sanitized = filter_var($data, FILTER_SANITIZE_EMAIL);
             if (filter_var($sanitized, FILTER_VALIDATE_EMAIL)){
+                $data = $sanitized;
                 $data = trim($data);
                 $data = stripslashes($data);
                 $data = htmlspecialchars($data);
