@@ -3,6 +3,12 @@
     include("header.php");
     include("pageContent.php");
     include("footer.php");
+    include ("database.php");
+    
+    if(isset($_POST("cart"))){
+           
+    }
+    
 ?>
         
 <html>

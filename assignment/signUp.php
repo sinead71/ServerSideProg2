@@ -15,7 +15,7 @@ include ("validate.php");
         $stmt->bindParam(':pass', $password);
         $stmt->bindParam(':email', $email);
         $stmt->execute();
-}
+    }
 
 
 ?>
