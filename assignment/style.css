@@ -110,32 +110,42 @@ input {
 }
 
 .products{
-    margin-top:40px;
+    margin-top:20px;
+    margin-left: 40px;
     width:30%;
-    height: 300px;
+    height: 500px;
     border-right-style:  inset;
     border-bottom-style: inset;
     border-color: black;
-    margin-left: 5%;
+    float:left;
+    
 }
 
 h2{
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 30px; 
+    margin-bottom: 0px;
+}
+
+p{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;    
 }
 
 img{
-    float:left;
-    margin-left: 7%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 85%;
-    max-height: 95%;
+    max-height: 70%;
 }
 
 #addBtn{
     float:left;
     margin-left: 40%;
-    margin-top: 15px;
+    margin-top: 6px;
     padding:10px;
     width:120px;
     border:0;
