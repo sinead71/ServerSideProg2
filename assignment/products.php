@@ -1,5 +1,5 @@
 <?php 
-    //session_start();
+    session_start();
     include("header.php");
     include ("database.php");
     
@@ -13,16 +13,26 @@
             echo("<p>". $row['description'] ."</p>");
             echo ("<img src='". $row['image_url'] ."' alt='a keyboard'></a>");
             echo ("<form method='POST' action='products.php'>");
-                echo ("<button id='addBtn'>Add To Cart</button>");
+                echo("<input type='hidden' value='".$row['prod_id']."' name='addToCart'>");
+                echo ("<button id='addBtn' name='addBtn'>Add To Cart</button>");
             echo ("</form>");           
         echo("</div>");  
         
-                
-        $prod_id = $row['prod_id'];
-        
-    }          
+    } 
     
+    
+    if(isset($_POST['addBtn'])){
+        $productId = $_POST['addToCart'];
+        array_push($_SESSION['shoppingCart'], $productId);
+        
+        //header('Location:cart.php');
+        var_dump ($_SESSION['shoppingCart']);                 
+    }  
+    
+          
 ?>
+ 
+ 
         
 <html>
     <head>
