@@ -9,7 +9,7 @@
             <button id="logOutBtn" name="logOutBtn" >Log Out</button>
         </form>
         <form method="POST" id="checkout">
-            <button id="checkoutBtn">Checkout</button>
+            <button id="checkoutBtn" name="checkOutBtn">Checkout</button>
         </form>    
     </div>   
 </body>
@@ -17,7 +17,6 @@
 <?php 
 session_start();
 include("database.php");
-
 
 /*loop through session array
 where the id in the array matches the id in the database 
@@ -61,6 +60,38 @@ if(isset($_POST['logOutBtn'])){
     header('Location:index.html');
 } 
 
-
+if(isset($_POST['checkOutBtn'])){
+    include('librarys/PHPMailer-master/PHPMailerAutoload.php');
+    
+    $mail = new PHPMailer;
+    $body = "";
+    
+    $mail->isSMTP();
+    $mail->Host = "smtp.gmail.com";
+    $mail->SMTPAuth = true;
+    $mail->SMTPSecure = "tls";
+    $mail->Port = 587;
+    $mail->Username = "ssp2.sineadcooney@gmail.com";
+    $mail->Password = "ssp2cart";
+    $mail->setFrom("ssp2.sineadcooney@gmail.com", "Sinead Cooney");
+    $mail->addAddress("ssp2.sineadcooney@gmail.com", "Sinead Cooney");
+    $mail->Subject = "Order Confirmed";
+    $body .= "<h1>Your Products</h1>";
+    foreach($_SESSION['shoppingCart'] as $prodId){
+        $stmt = $conn->prepare("SELECT * FROM products WHERE prod_id = :productId");
+        $stmt->bindParam(":productId", $prodId);
+        $stmt->execute();
+        while($row = $stmt->fetch(PDO::FETCH_ASSOC)){
+            $body .= "<div id='orderProd'>";
+            $body .= "<h2>".$row['title']. " &euro;" .$row['price']  ."</h2>";
+            $body .= "<img src='". $row['image_url'] ."' alt='a keyboard'></a>"; 
+            $body .= "</div>";
+        }
+    }
+    $mail->msgHtml($body);
+    if(!$mail->send()){
+        echo "Error:" . $mail->ErrorInfo;
+    }    
+}
 
 ?>
