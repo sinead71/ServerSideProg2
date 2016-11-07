@@ -22,12 +22,10 @@
     } 
     
     
+    //adds products to the array
     if(isset($_POST['addBtn'])){
         $productId = $_POST['addToCart'];
-        array_push($_SESSION['shoppingCart'], $productId);
-        
-        //header('Location:cart.php');
-        var_dump ($_SESSION['shoppingCart']);                 
+        array_push($_SESSION['shoppingCart'], $productId);             
     }  
     
           
