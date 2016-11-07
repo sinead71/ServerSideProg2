@@ -16,6 +16,8 @@ if(isset($_POST['signUp'])){
     $stmt->bindParam(':pass', $password);
     $stmt->bindParam(':email', $email);
     $stmt->execute();
+    
+    header("Location:products.php");
 }
 
 
