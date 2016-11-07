@@ -1,5 +1,19 @@
 <link rel="stylesheet" type="text/css" href="style.css"/>
-<body class="cart"></body>
+<body class="cart">
+    <div id="header">
+        <h1 id="pagetitle">Your Cart</h1>
+        <form method="POST" action="products.php">
+            <button id="prodBtn">Products</button>
+        </form>
+        <form method="POST" >
+            <button id="logOutBtn" name="logOutBtn" >Log Out</button>
+        </form>
+        <form method="POST" id="checkout">
+            <button id="checkoutBtn">Checkout</button>
+        </form>    
+    </div>   
+</body>
+
 <?php 
 session_start();
 include("database.php");
@@ -40,6 +54,13 @@ if(isset($_POST['deleteProd'])){
     }
     header('Location:cart.php');
 }
+
+//deletes the session if logging out
+if(isset($_POST['logOutBtn'])){
+    unset($_SESSION['shoppingCart']);
+    header('Location:index.html');
+} 
+
 
 
 ?>

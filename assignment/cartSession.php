@@ -5,7 +5,7 @@ would be created each time one of those pages were opened up. Meaning
 anything that was added to it eariler would be lost.
 */
 
-if(isset($_POST['cart.php'])){
+if(!isset($_SESSION['shoppingCart'])){
     $_SESSION['shoppingCart'] = array();
 }
 
