@@ -190,6 +190,18 @@ img{
 
 /* cart page */
 
-.cartList{
-    transform: scale(0.5);
+.cart{
+    background-color: white;
 }
+
+.cartList{
+    margin-top:20px;
+    margin-left: 40px;
+    width:30%;
+    height: 500px;
+    border-right-style:  inset;
+    border-bottom-style: inset;
+    border-color: black;
+    float:left;    
+}
+
