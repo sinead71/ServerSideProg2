@@ -6,4 +6,5 @@ echo ("<div class='products'>");
         echo ("<button id='addBtn'>Add To Cart</button>");
     echo ("</form>");
 echo ("</div>");
+
 ?>

@@ -3,6 +3,7 @@ session_start();
 include ("database.php");
 include ("validate.php");
 
+//signing up to the website. This adds the new info to the users table in the database
 if(isset($_POST['signUp'])){      
     $username = check_input($_POST["username"]);
     $password = check_input(sha1($_POST["password"]));

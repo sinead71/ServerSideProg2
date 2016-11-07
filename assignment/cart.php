@@ -40,8 +40,7 @@ foreach ($_SESSION['shoppingCart'] as $prodId){
     }
 }
 
-
-
+//deleting a product from the cart array 
 if(isset($_POST['deleteProd'])){
     $deletingProduct = $_POST['cartProdId'];
     foreach($_SESSION['shoppingCart'] as $cartProduct => $val){
@@ -92,13 +91,16 @@ if(isset($_POST['checkOutBtn'])){
         }
     }
     $mail->msgHtml($body);
+    //if the eamil doesn't sent an error will appear
     if(!$mail->send()){
         echo "Error:" . $mail->ErrorInfo;
-    }    
-}
-else{
-    unset($_SESSION['shoppingCart']);
-    $_SESSION['shoppingCart']= array();
+    }   
+    //this will reset the shopping cart session so that the cart is empty after you check out your products 
+    else{
+        unset($_SESSION['shoppingCart']);
+        $_SESSION['shoppingCart']= array();
+        header("Location:products.php");
+    }
 }
 
 ?>

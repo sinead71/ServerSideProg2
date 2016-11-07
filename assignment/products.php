@@ -2,6 +2,8 @@
 session_start();
 include("header.php");
 include ("database.php");
+//this will only be required once so that the session array doesn't keep refreshing each 
+//time it is called. 
 require_once("cartSession.php");
 
 $stmt = $conn->prepare("SELECT * FROM products");
@@ -29,7 +31,7 @@ if(isset($_POST['addBtn'])){
 }  
     
  
-  
+//Logging out of the site  
 if(isset($_POST['logOutBtn'])){
     unset($_SESSION['shoppingCart']);
     header('Location:index.html');

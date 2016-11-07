@@ -17,6 +17,7 @@ include ("database.php");
         $stmt->bindParam(":pass", $password);
         $stmt->execute();
         
+        //if one row comes back then go to the products page
         if($stmt->rowCount() == 1){
             header("Location:products.php");          
         }else{
