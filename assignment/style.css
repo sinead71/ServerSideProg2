@@ -44,8 +44,28 @@ input {
     font-size:16px;
 }
 
+#or{
+    text-align: center;
+    color: #d19ea4;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;   
+    margin-bottom: 6px; 
+}
+
+#goToSignUp{
+    padding:5px;
+    width:20%;
+    background-color: #d19ea4;
+    margin-left: 225px;
+    border: 0;
+    border-radius:18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:10px;  
+}
+
 
 /* Sign up page */
+
 
 #signUpArea{  
     width:30%;
@@ -59,6 +79,17 @@ input {
     color: #d19ea4;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 45px;
+}
+
+#goToLogIn{
+    padding:5px;
+    width:20%;
+    background-color: #d19ea4;
+    margin-left: 225px;
+    border: 0;
+    border-radius:18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:10px;    
 }
 
 #signUpForm{
