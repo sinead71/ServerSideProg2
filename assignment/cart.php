@@ -19,8 +19,8 @@ foreach ($_SESSION['shoppingCart'] as $prodId){
             echo("<h2>". $row['title']." &euro;" .$row['price']  ."</h2>");
             echo("<p>". $row['description'] ."</p>");
             echo ("<img src='". $row['image_url'] ."' alt='a keyboard'></a>");           
-            echo("<form method='POST' id='delete'");
-                echo("<input type='hidden' value='".$row['prod_id']."' name='cartProdId'>");
+            echo("<form method='POST' id='delete'>");
+                echo("<input type='hidden' name='cartProdId' value='".$row['prod_id']."'>");
                 echo("<button id='deleteProd' name='deleteProd'>Delete</button>");
             echo("</form>");
         echo("</div>");
@@ -28,13 +28,17 @@ foreach ($_SESSION['shoppingCart'] as $prodId){
 }
 
 
-if(isset($_POST['delete'])){
+
+if(isset($_POST['deleteProd'])){
     $deletingProduct = $_POST['cartProdId'];
-    foreach($_SESSION['shoppingCart'] as $prodId => $val){
+    foreach($_SESSION['shoppingCart'] as $cartProduct => $val){
         if($val == $deletingProduct){
-            unset($_SESSION['shoppingCart'][''$prodId]);
+            unset($_SESSION['shoppingCart'][$cartProduct]);
+            //avoids a copy of the same id being deleted at the same time
+            break;
         }   
     }
+    header('Location:cart.php');
 }
 
 
