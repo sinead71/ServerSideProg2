@@ -2,6 +2,7 @@
     session_start();
     include("header.php");
     include ("database.php");
+    require_once("cartSession.php");
     
     $stmt = $conn->prepare("SELECT * FROM products");
     $stmt->execute();
