@@ -60,6 +60,9 @@ if(isset($_POST['logOutBtn'])){
     header('Location:index.html');
 } 
 
+
+//sends an eamil ssp2.sineadcooney@gmail.com when checking out products.
+//the library is PHPMailer found at https://github.com/PHPMailer/PHPMailer
 if(isset($_POST['checkOutBtn'])){
     include('librarys/PHPMailer-master/PHPMailerAutoload.php');
     
@@ -92,6 +95,10 @@ if(isset($_POST['checkOutBtn'])){
     if(!$mail->send()){
         echo "Error:" . $mail->ErrorInfo;
     }    
+}
+else{
+    unset($_SESSION['shoppingCart']);
+    $_SESSION['shoppingCart']= array();
 }
 
 ?>
