@@ -15,3 +15,29 @@ get_sidebar();
 <?php endwhile; endif; ?>
 
 <?php get_footer(); ?>
+
+<?php 
+echo get_option('siteurl');
+update_option('sc_test', 'sinead');
+//echo get_option('sc_test');
+update_option('page_views', '1');
+$vists = get_option('page_views');
+//if($vists !>0 ){
+  //  $vists = 0;
+//}
+//$visits++;
+//update_option("page_views");
+
+
+
+update_user_meta(3, 'last_name', 'ryan' );
+$userId = 
+get_current_user_id();
+update_user_meta($userId, 'favourite music', 'pop');
+echo ("<br>");
+echo get_current_user_id();
+echo ("<br>");
+$allData = get_user_meta(2);
+echo($allData);
+
+?>

@@ -15,4 +15,16 @@ if(function_exists('register_sidebar')){
         'id'=>'sidebar1'
     ));
 }
+
+function get_user_role(){
+    global $wp_roles;
+    $currentrole='';
+    
+    foreach($wp_roles->role_names as $role => $name){
+        if(current_user_can($role)){
+            $currentrole = $role;
+        }
+    }
+    return $currentrole;
+}
 ?>
