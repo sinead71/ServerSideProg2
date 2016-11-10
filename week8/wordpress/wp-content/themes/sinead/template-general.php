@@ -90,16 +90,15 @@ array(
     '%s',
     '%d'
 ), 
-array( '%d')
-    
-);
+array( '%d'));
 
 
 //deleting the values
-$wpdb->delete('wp_grade', array(
+$wpdb->delete('wp_grades', array(
     'id' => 1
 ),
 array(
     '%d'
 ));
+
 ?>
