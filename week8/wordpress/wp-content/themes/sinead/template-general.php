@@ -57,6 +57,49 @@ $user_data = $wpdb->get_row(
 
 //can replace user_email with any other wp_user info from db
 echo $user_data->user_email;
+echo ("<br>");
+
+$user_data = $wpdb->get_results(
+    "SELECT display_name, user_email FROM wp_users WHERE ID=1"
+);
+
+foreach($user_data as $udata){
+    echo $udata->user_email. "<br>";
+    echo $udata->display_name;
+}
+
+//inserting values into an existing table in the db
+$wpdb->insert('wp_grades', array(
+    'name' => 'John Ryan',
+    'subject' => 'ssp2',
+    'grade' => 90
+),
+array(
+    '%s',
+    '%s',
+    '%d'
+));
+
+//updating the vlaues on a table
+$wpdb->update('wp_grades', array(
+    'name' => 'Helen Ryan',
+    'grade' => 79
+),
+array( 'id' => 1),
+array(
+    '%s',
+    '%d'
+), 
+array( '%d')
+    
+);
 
 
+//deleting the values
+$wpdb->delete('wp_grade', array(
+    'id' => 1
+),
+array(
+    '%d'
+));
 ?>
