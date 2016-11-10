@@ -1,4 +1,5 @@
 <?php include 'header.php';
+include('page-logIn.php');
 get_sidebar();
  ?>
 <?php if(have_Posts()):while(have_posts()):the_post();?>
