@@ -14,9 +14,16 @@
         <div class="col-md-2">
         <h1>My Site</h1>
         </div> -->
- <?php       
-//adding plugins
-include('frontend.php');
-?>
+    <?php       
+    //adding plugins
+    include('frontend.php');
+    ?>
+    
+    <h3>Show all pages?</h3>
+    <form method="POST">
+        <input type="radio" name="yesNo" value="yes"> Yes 
+        <input type="radio" name="yesNo" value="no"> No <br>
+        <input type="button" name="update" value="update">
+    </form>
 </body>
 </html>
