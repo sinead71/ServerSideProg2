@@ -6,13 +6,17 @@
      crossorigin="anonymous">
 </head>
 <body>
-    <ul class="nav nav-pills">
+    <!---<ul class="nav nav-pills">
         <?php wp_nav_menu(array('theme_location'=> 'header-menu', 'menu' => 'Header Menu')); ?>
     </ul>    
     
     <div class="row">
         <div class="col-md-2">
         <h1>My Site</h1>
-        </div>
+        </div> -->
+ <?php       
+//adding plugins
+sc_sitemap(); 
+?>
 </body>
 </html>
