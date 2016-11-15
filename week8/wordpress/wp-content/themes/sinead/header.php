@@ -16,7 +16,7 @@
         </div> -->
  <?php       
 //adding plugins
-sc_sitemap(); 
+include('frontend.php');
 ?>
 </body>
 </html>
