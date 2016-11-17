@@ -21,8 +21,8 @@
     
     <h3>Show all pages?</h3>
     <form method="POST">
-        <input type="radio" name="yesNo" value="yes"> Yes 
-        <input type="radio" name="yesNo" value="no"> No <br>
+        <input type="radio" name="no" value="yes"> Yes 
+        <input type="radio" name="yes" value="no"> No <br>
         <input type="button" name="update" value="update">
     </form>
 </body>
