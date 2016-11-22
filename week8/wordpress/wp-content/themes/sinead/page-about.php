@@ -20,4 +20,9 @@ Some more text under the loop on the about page.
 <?php 
 //this shows the feature from the home page. It can be added to any page of the website with this code.
 the_field('feature_one', '20');
+echo('<br>');
+
+
+
+
 ?>

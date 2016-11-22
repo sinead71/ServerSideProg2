@@ -27,4 +27,11 @@ function get_user_role(){
     }
     return $currentrole;
 }
+
+
+//shortcodes
+function Sinead($atts){
+    return "Sinead Cooney";
+}
+add_shortcode('foobar', 'Sinead');
 ?>
