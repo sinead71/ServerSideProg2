@@ -1,9 +1,8 @@
 <html>
 <head>
      <?php wp_head(); ?>
-     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
-     integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
-     crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 </head>
 <body>
     <!---<ul class="nav nav-pills">
@@ -19,9 +18,11 @@
     include('frontend.php');
     ?>
     
-    <h3>Show all pages?</h3>
+     <div class="w3-panel w3-pink">
+        <h2 class="w3-opacity">Hide Menu?</h2>
+    </div> 
     <input type="radio" name="no" value="yes"> Yes 
     <input type="radio" name="yes" value="no"> No <br>
-    <input type="button" name="update" value="update">
+    <button class="w3-btn w3-white w3-border w3-border-red w3-round-xlarge">Update</button>
 </body>
 </html>
