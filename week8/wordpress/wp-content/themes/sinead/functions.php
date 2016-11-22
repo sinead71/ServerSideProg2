@@ -35,7 +35,7 @@ function write_name($atts){
 }
 add_shortcode('foobar', 'write_name');
 
-echo"<br>";
+echo "<br>";
 
 function user_name($atts){
     $a = shortcode_atts(
@@ -46,4 +46,12 @@ function user_name($atts){
     return $a['name']. " " . $a['email'];
 }
 add_shortcode('person', 'user_name');
+echo "<br>";
+
+//enclosing shortcode in html 
+function caption_shortcode($atts, $content = null){
+    return '<span class="caption">' . $content . '</span>';
+}
+add_shortcode('caption', 'caption_shortcode');
+
 ?>
