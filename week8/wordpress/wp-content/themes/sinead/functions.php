@@ -30,8 +30,20 @@ function get_user_role(){
 
 
 //shortcodes
-function Sinead($atts){
+function write_name($atts){
     return "Sinead Cooney";
 }
-add_shortcode('foobar', 'Sinead');
+add_shortcode('foobar', 'write_name');
+
+echo"<br>";
+
+function user_name($atts){
+    $a = shortcode_atts(
+        array('name' => 'placeholder',
+              'email' => 'placeholder'),
+        $atts);    
+        
+    return $a['name']. " " . $a['email'];
+}
+add_shortcode('person', 'user_name');
 ?>
