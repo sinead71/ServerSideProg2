@@ -7,10 +7,14 @@
         </script>
     </head>
     <body>
+        <div id="lorem"></div>
+        <br>
         <button name="button">go</button>
+        <br>
+        <div id="notes"></div>
         <script>
             $(document).ready(function(){
-                $("lorem").load("ipsum.html", function(){
+                $("#lorem").load("ipsum.html", function(){
                     alert("Load was performed");
                 });
                 
@@ -21,6 +25,21 @@
                         });
                     });
                 });
+                
+                $.get('note.xml', function(data){
+                    $(data).find('note').each(function(){
+                        console.log($(this).find('body').text());
+                        console.log($(this).attr('type'));                    
+                    });
+                });
+                
+                
+                //ajax
+                var theNum = 10;
+                $.get('poc.php', {'smallNum': theNum}, function(data){
+                    console.log(data);
+                });
+                
             });
             
         </script>

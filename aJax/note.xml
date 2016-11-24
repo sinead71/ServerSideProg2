@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<notes>
+    <note type='email'>
+        <to>John</to>
+        <from>Jane</from>
+        <heading>Reminder</heading>
+        <body>Don't forget our meeting Tuesday at 9am</body>
+    </note>
+    <note type='sticky'>
+        <to>Tom</to>
+        <from>Tim</from>
+        <heading>File</heading>
+        <body>Please send me that file you mentioned</body>
+    </note>
+</notes>
