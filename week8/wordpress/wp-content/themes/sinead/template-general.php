@@ -101,7 +101,20 @@ array(
     '%d'
 ));
 
-
-
-
 ?>
+<button name="button">Button</button>
+<script>
+    $("button").click(function(){
+        var data = {
+            action: 'action_called',
+            user_id: 1
+        }
+        
+        var ajaxurl = '<?php echo admin_url("admin-ajax.php"); ?>';
+        
+        $.post(ajaxurl, data, function(html){
+            concole.log(html);
+        });
+        return;
+    });
+</script>

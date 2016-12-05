@@ -54,4 +54,17 @@ function caption_shortcode($atts, $content = null){
 }
 add_shortcode('caption', 'caption_shortcode');
 
+
+
+//ajax
+add_action('wp_ajax_action_called', 'function_name');
+
+function function_name(){
+    $user_id = $_POST["user_id"];
+    $user = get_user_by('id', $user_id);
+    
+    echo 'User is ' .  $user->first_name . ' ' . $user->last_name;
+    die();
+}
+
 ?>

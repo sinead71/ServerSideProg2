@@ -12,6 +12,10 @@
         <button name="button">go</button>
         <br>
         <div id="notes"></div>
+        <br>
+        <span id="num">0</span>
+        <br>
+        <button name="addNum"> Add 5 </button>
         <script>
             $(document).ready(function(){
                 $("#lorem").load("ipsum.html", function(){
@@ -39,6 +43,14 @@
                 $.get('poc.php', {'smallNum': theNum}, function(data){
                     console.log(data);
                 });
+                
+                /*$('addNum').click(function(){
+                    $.get(
+                        
+                    })
+                })
+                //$("#num").html()
+                */
                 
             });
             
